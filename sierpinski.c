@@ -17,7 +17,10 @@ rgb_pixel_t sierpinski(int x, int y) {
 }
 
 int main(int argc, char *argv[]){
-	if (argc != 2) return 0;
+	if (argc != 2) {
+		fprintf(stderr, "usage: %s dimension\n", argv[0]);
+		return 1;
+	}
 	int depth = atoi(argv[1]);
 	int dimension = 1;
 	int x,y;
